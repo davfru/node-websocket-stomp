@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/davfru/node-websocket-stomp/issues"
   },
-  "homepage": "https://github.com/davfru/node-websocket-stomp#readme"
+  "homepage": "https://github.com/davfru/node-websocket-stomp#readme",
+  "dependencies": {
+    "stompjs": "^2.3.3"
+  }
 }
