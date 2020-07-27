@@ -1,0 +1,19 @@
+{
+  "name": "websocket-stomp",
+  "version": "1.0.0",
+  "description": "Client for stomp websocket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davfru/node-websocket-stomp.git"
+  },
+  "author": "davfru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davfru/node-websocket-stomp/issues"
+  },
+  "homepage": "https://github.com/davfru/node-websocket-stomp#readme"
+}
