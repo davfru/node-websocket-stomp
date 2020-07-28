@@ -1,15 +1,3 @@
-// const stomp = require('stompjs');
-// let client = stomp.overTCP("localhost:8080/websocket");
-//
-// function testConnection() {
-//     console.log(client);
-// }
-//
-// testConnection();
-
-// https://stackoverflow.com/questions/54786323/how-can-i-make-spring-websocket-node-js-client
-// https://www.toptal.com/java/stomp-spring-boot-websocket
-
 const SockJS = require("sockjs-client");
 const Stomp = require("stompjs");
 
@@ -20,22 +8,22 @@ function connect() {
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);
-        //sendName();
-        stompClient.subscribe('/topic/user', function (greeting) {
-            console.log(JSON.parse(greeting.body).content);
+        sendMessage();
+        stompClient.subscribe('/topic/user', function (message) {
+            console.log(message.body);
         });
     });
 }
 
 function disconnect() {
-    if (stompClient !== null) {
+    if (!stompClient) {
         stompClient.disconnect();
     }
     console.log("Disconnected");
 }
 
-function sendName() {
-    stompClient.send("/app/user", {}, JSON.stringify({ name: "ciao"}));
+function sendMessage() {
+    stompClient.send("/app/user", {}, "hello!");
 }
 
 connect();
